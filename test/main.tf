@@ -1,5 +1,5 @@
 resource "random_password" "my_password" {
-  length  = 7
+  length  = 6
   special = true
 }
 
@@ -12,6 +12,6 @@ output "user_name" {
 }
 
 output "my_password" {
-  value = random_password.my_password.result
+  value     = random_password.my_password.result
   sensitive = true
 }
