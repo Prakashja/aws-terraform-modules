@@ -1,44 +1,20 @@
-# variable "ec2_ami" {
-#   type        = string
-#   description = "AMI ID of EC2 Instances"
-# }
-variable "ec2_instance_type" {
+variable "ec2_ami" {
   type        = string
-  description = "EC2 instance type ex: t2.medium"
+  description = "AMI iD of the EC2 Instance"
+}
+
+variable "ec2_instances_typ" {
+  type        = string
+  description = "EC2 instances type"
 }
 
 variable "ec2_instance_name" {
   type        = string
-  description = "Name of the Ec2 Instance"
+  description = "Name of the Ec2 instance"
 }
 
-variable "ec2_os_name" {
-  description = "Name of the OS"
-}
-
-variable "app_name" {
-  type        = string
-  description = "name of the app"
-}
-
-variable "team_name" {
-  type        = string
-  description = "team name"
-}
-
-variable "environment" {
-  type        = string
-  description = "name of the environment"
-}
-
-variable "owner" {
-  type        = string
-  description = "owner or contact of the resource"
-}
-
-variable "contact_dl" {
-  type        = string
-  description = "conant email id"
+variable "common_tags" {
+  description = "list of Common tage specific to project, which will hellp to identify teh resource"
 }
 
 variable "ec2_key_name" {
