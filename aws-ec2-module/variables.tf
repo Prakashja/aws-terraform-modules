@@ -21,3 +21,15 @@ variable "ec2_key_name" {
   type        = string
   description = "EC2 key name which will be used for SSh.."
 }
+
+variable "root_volume_size" {
+  type = number
+  description = "then root volume size"
+  default = 8
+}
+
+variable "root_volume_type" {
+  type = string
+  default = "gp2"
+  description = "the root volume type"
+}
