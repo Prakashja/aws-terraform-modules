@@ -1,35 +1,47 @@
-variable "ec2_ami" {
+# variable "ec2_ami" {
+#   type        = string
+#   description = "AMI ID of EC2 Instances"
+# }
+variable "ec2_instance_type" {
   type        = string
-  description = "AMI iD of the EC2 Instance"
-}
-
-variable "ec2_instances_typ" {
-  type        = string
-  description = "EC2 instances type"
+  description = "EC2 instance type ex: t2.medium"
 }
 
 variable "ec2_instance_name" {
   type        = string
-  description = "Name of the Ec2 instance"
+  description = "Name of the Ec2 Instance"
 }
 
-variable "common_tags" {
-  description = "list of Common tage specific to project, which will hellp to identify teh resource"
+variable "ec2_os_name" {
+  description = "Name of the OS"
+}
+
+variable "app_name" {
+  type        = string
+  description = "name of the app"
+}
+
+variable "team_name" {
+  type        = string
+  description = "team name"
+}
+
+variable "environment" {
+  type        = string
+  description = "name of the environment"
+}
+
+variable "owner" {
+  type        = string
+  description = "owner or contact of the resource"
+}
+
+variable "contact_dl" {
+  type        = string
+  description = "conant email id"
 }
 
 variable "ec2_key_name" {
   type        = string
   description = "EC2 key name which will be used for SSh.."
-}
-
-variable "root_volume_size" {
-  type = number
-  description = "then root volume size"
-  default = 8
-}
-
-variable "root_volume_type" {
-  type = string
-  default = "gp2"
-  description = "the root volume type"
 }
