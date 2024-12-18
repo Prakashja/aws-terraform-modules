@@ -5,4 +5,5 @@ module "ec2" {
   ec2_instance_name = var.ec2_instance_name
   common_tags       = local.common_tags
   ec2_key_name      = var.ec2_key_name
+  user_data         = var.user_data
 }

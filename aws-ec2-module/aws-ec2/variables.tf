@@ -39,3 +39,7 @@ variable "associate_public_ip_address" {
   default     = true
   description = "associate the public Ip or not ex: true/false"
 }
+
+variable "user_data" {
+  description = "user data"
+}

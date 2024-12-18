@@ -45,3 +45,8 @@ variable "ec2_key_name" {
   type        = string
   description = "EC2 key name which will be used for SSh.."
 }
+
+variable "user_data" {
+  description = "User data script to be passed to EC2 instance"
+  type        = string
+}
