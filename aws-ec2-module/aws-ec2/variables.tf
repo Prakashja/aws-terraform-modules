@@ -41,5 +41,6 @@ variable "associate_public_ip_address" {
 }
 
 variable "user_data" {
-  description = "user data"
+  description = "User data script to be passed to EC2 instance"
+  type        = string
 }
