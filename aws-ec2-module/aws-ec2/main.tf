@@ -1,4 +1,4 @@
-resource "aws_instance" "m_instance" {
+resource "aws_instance" "my_instance" {
   ami                         = var.ec2_ami
   instance_type               = var.ec2_instances_typ
   key_name                    = var.ec2_key_name
@@ -18,7 +18,7 @@ resource "aws_instance" "m_instance" {
 }
 
 output "ec2_instance_id" {
-  value = aws_instance.m_instance.id
+  value = aws_instance.my_instance.id
 }
 
 
