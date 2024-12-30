@@ -24,7 +24,6 @@ jobs:
        uses: actions/checkout@v2
      - name: terraform formate
        run: |
+         sh test-script.sh
          cd aws-ec2-module
          terraform fmt
-     - name: matrix
-       run: echo  "Hello ${{ matrix.color }} ${{ matrix.animal }}"
