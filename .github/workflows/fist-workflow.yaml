@@ -27,5 +27,6 @@ jobs:
          cd aws-ec2-module
          terraform fmt
          echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
+         echo "::debug::executing the setup script"
        env:
           BUILD: 'We are currently running the Build Job'
