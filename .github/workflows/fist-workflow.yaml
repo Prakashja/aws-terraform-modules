@@ -12,10 +12,6 @@ jobs:
     env:
      JAVA_VERSION: '1.1'
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        animal: [cat, dog, bear]
-        color: [black, brown]
     steps:
      - name: A job to run shell commands
        run: |
@@ -31,5 +27,5 @@ jobs:
          cd aws-ec2-module
          terraform fmt
          echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
-         env:
+       env:
           BUILD: 'We are currently running the Build Job'
