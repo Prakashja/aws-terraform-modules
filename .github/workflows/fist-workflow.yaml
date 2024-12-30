@@ -1,5 +1,6 @@
 name: my first workflow
-
+env:
+ NAME: 'My Actions'
 on:
   workflow_dispatch:
   push:
@@ -8,6 +9,8 @@ on:
 
 jobs:
   simple-test:
+    env:
+     JAVA_VERSION: '1.1'
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -27,3 +30,4 @@ jobs:
          sh test-script.sh
          cd aws-ec2-module
          terraform fmt
+         echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
