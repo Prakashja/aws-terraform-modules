@@ -26,7 +26,12 @@ jobs:
          sh test-script.sh
          cd aws-ec2-module
          terraform fmt
-         echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
+         echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION" > artifact.txt
          echo "::debug::executing the setup script"
        env:
           BUILD: 'We are currently running the Build Job'
+      
+     - name: artificate
+       uses: actions/upload-artifact@v4
+       with:
+         path: artifact.txt
