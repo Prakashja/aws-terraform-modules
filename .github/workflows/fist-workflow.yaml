@@ -35,3 +35,4 @@ jobs:
        uses: actions/upload-artifact@v4
        with:
          path: aws-ec2-module/artifact.txt
+         retention-days: 1
