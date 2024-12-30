@@ -15,3 +15,4 @@ jobs:
         echo "Hello, GitHub Actions!"
         echo "This is my first workflow"
         echo "print ${{ github.repository }}, ${{ github.action }}"
+        echo "This job is triggered by ${{ github.event_name }}"
