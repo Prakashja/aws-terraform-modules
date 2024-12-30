@@ -31,3 +31,5 @@ jobs:
          cd aws-ec2-module
          terraform fmt
          echo "Hello $NAME. $BUILD. Using Java Version $JAVA_VERSION"
+         env:
+          BUILD: 'We are currently running the Build Job'
