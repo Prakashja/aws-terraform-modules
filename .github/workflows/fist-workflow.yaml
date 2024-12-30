@@ -9,6 +9,10 @@ on:
 jobs:
   simple-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        animal: [cat, dog, bear]
+        color: [black, brown]
     steps:
      - name: A job to run shell commands
        run: |
@@ -22,3 +26,5 @@ jobs:
        run: |
          cd aws-ec2-module
          terraform fmt
+     - name: matrix
+       run: echo  "Hello ${{ matrix.color }} ${{ matrix.animal }}"
