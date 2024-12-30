@@ -19,5 +19,7 @@ jobs:
 
      - name: terraform formate
        run: |
+         pwd
+         ls -ltr
          cd aws-ec2-module
          terraform fmt
