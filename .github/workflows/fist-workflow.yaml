@@ -1,0 +1,16 @@
+name: my first workflow
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  simple-test:
+    runs-on: ubuntu-latest
+    name: A job to run shell commands
+    run: |
+      echo "Hello, GitHub Actions!"
+      echo "This is my first workflow"
+      echo "print ${{ github.repository }}, ${{ github.action }}"
