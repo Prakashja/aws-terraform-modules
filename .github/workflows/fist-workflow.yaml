@@ -20,7 +20,7 @@ jobs:
         echo "print ${{ github.repository }}, ${{ github.action }}"
         echo "This job is triggered by ${{ github.event_name }}"
      - name: Checkout code
-       uses: actions/checkout@v2
+       uses: actions/checkout
      - name: terraform formate
        run: |
          sh test-script.sh
