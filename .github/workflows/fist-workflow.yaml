@@ -1,4 +1,5 @@
 name: "my first workflow"
+run-name: Deploy to dev by @${{ github.actor }}
 env:
  NAME: 'My Actions'
 on:
