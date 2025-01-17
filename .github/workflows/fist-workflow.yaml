@@ -1,4 +1,4 @@
-name: my first workflow
+
 env:
  NAME: 'My Actions'
 on:
