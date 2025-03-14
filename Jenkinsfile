@@ -4,6 +4,9 @@ pipeline {
       string defaultValue: 'apply', description: "apply the changes", name: 'plan', trim:false
       string defaultValue: 'dev', description: "apply the changes", name: 'environment', trim:false
     }
+    options {
+     ansiColor('xtrem')
+    }
     stages{
       stage('terraform init'){
       steps{
@@ -18,5 +21,18 @@ pipeline {
       }
       }
       }
+    stage('terraform plan'){
+    steps{
+    script {
+    withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'terraform', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+      def EnvironmentName = params.environment
+      sh '''
+      cd environment/${EnvironmentName}/
+      terraform plan
+      '''
+    }
+    }
+    }
+    }
     }
 }
