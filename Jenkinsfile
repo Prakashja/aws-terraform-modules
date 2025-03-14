@@ -12,8 +12,9 @@ pipeline {
       steps{
       script {
       withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'terraform', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-        def EnvironmentName = params.environment
+        def environment = params.environment
         sh '''
+        echo "The parameter value is: ${environment}"
         cd environment/${EnvironmentName}/
         terraform init
         '''
@@ -25,8 +26,9 @@ pipeline {
     steps{
     script {
     withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'terraform', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-      def EnvironmentName = params.environment
+      def environment = params.environment
       sh '''
+      echo "The parameter value is: ${environment}"
       cd environment/${EnvironmentName}/
       terraform plan
       '''
