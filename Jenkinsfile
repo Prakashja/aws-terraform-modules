@@ -6,11 +6,13 @@ pipeline {
     }
     stages{
       stage('terraform init'){
+      withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'terraform', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
         def EnvironmentName = params.environment
         sh '''
         cd environment/${EnvironmentName}/
         terraform init
         '''
+      }
       }
     }
 }
