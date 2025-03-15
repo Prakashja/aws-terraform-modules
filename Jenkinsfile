@@ -8,6 +8,20 @@ pipeline {
      ansiColor('xtrem')
     }
     stages{
+          stage('terraform fmt'){
+          steps{
+          script {
+          withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'terraform', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+            def environment = params.environment
+            sh '''
+            echo "The parameter value is: ${environment}"
+            cd environment/${environment}/
+            terraform fmt
+            '''
+          }
+          }
+          }
+          }
       stage('terraform init'){
       steps{
       script {
@@ -36,5 +50,19 @@ pipeline {
     }
     }
     }
+        stage('terraform apply'){
+        steps{
+        script {
+        withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'terraform', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+          def environment = params.environment
+          sh '''
+          echo "The parameter value is: ${environment}"
+          cd environment/${environment}/
+          terraform apply --auto-approve
+          '''
+        }
+        }
+        }
+        }
     }
 }
