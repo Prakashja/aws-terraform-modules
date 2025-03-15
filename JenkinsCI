@@ -22,7 +22,6 @@ pipeline {
           }
           }
           }
-    stages{
           stage('terraform validate'){
           steps{
           script {
