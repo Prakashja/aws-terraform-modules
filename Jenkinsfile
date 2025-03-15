@@ -50,6 +50,13 @@ pipeline {
     }
     }
     }
+    stage('Terraform Apply Approval') {
+  steps {
+    timeout(time: 1, unit: 'MINUTES') {
+      input(message: 'Do you want to apply Terraform changes?', ok: 'Proceed')
+    }
+  }
+}
         stage('terraform apply'){
         steps{
         script {
