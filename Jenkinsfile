@@ -15,7 +15,7 @@ pipeline {
         def environment = params.environment
         sh '''
         echo "The parameter value is: ${environment}"
-        cd environment/${EnvironmentName}/
+        cd environment/${environment}/
         terraform init
         '''
       }
@@ -29,7 +29,7 @@ pipeline {
       def environment = params.environment
       sh '''
       echo "The parameter value is: ${environment}"
-      cd environment/${EnvironmentName}/
+      cd environment/${environment}/
       terraform plan
       '''
     }
